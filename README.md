@@ -1,0 +1,2 @@
+# sGuitar
+Avalonia guitar emulator
