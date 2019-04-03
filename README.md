@@ -1,2 +1,2 @@
 # sGuitar
-Avalonia guitar emulator
+WPF guitar emulator.
