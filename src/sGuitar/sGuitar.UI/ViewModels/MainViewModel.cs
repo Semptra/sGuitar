@@ -1,16 +1,18 @@
 ﻿using ReactiveUI;
+using Splat;
 
 namespace sGuitar.UI.ViewModels
 {
-    public interface IMainViewModel : IReactiveObject, IRoutableViewModel
-    {
-
-    }
-
     public class MainViewModel : ReactiveObject, IMainViewModel
     {
-        public string UrlPathSegment => string.Empty;
+        public MainViewModel(IScreen screen = null)
+        {
+            HostScreen = screen ?? Locator.Current.GetService<IScreen>();
+        }
+
+        public string UrlPathSegment => "MainView";
 
         public IScreen HostScreen { get; }
+
     }
 }

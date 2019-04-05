@@ -3,7 +3,7 @@ using sGuitar.UI.ViewModels;
 
 namespace sGuitar.UI.Controls
 {
-    public class MainViewControl : ReactiveUserControl<IMainViewModel>
+    public class StartupWindowControl : ReactiveWindow<AppBootstrapper>
     {
     }
 }

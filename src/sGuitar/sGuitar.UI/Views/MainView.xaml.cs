@@ -1,5 +1,6 @@
 ﻿using ReactiveUI;
 using sGuitar.UI.ViewModels;
+using Splat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,11 @@ namespace sGuitar.UI.Views
     /// </summary>
     public partial class MainView
     {
-        public MainView()
+        public MainView(IMainViewModel mainViewModel = null)
         {
             InitializeComponent();
+
+            ViewModel = mainViewModel ?? Locator.Current.GetService<IMainViewModel>();
         }
     }
 }

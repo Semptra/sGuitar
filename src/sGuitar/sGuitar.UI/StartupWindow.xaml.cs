@@ -1,4 +1,6 @@
-﻿using sGuitar.UI.ViewModels;
+﻿using sGuitar.UI.Controls;
+using sGuitar.UI.ViewModels;
+using Splat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,22 +13,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace sGuitar.UI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StartupWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartupWindow : StartupWindowControl
     {
-        public MainWindow()
+        public StartupWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             this.AppBootstrapper = new AppBootstrapper();
-            this.DataContext = this.AppBootstrapper;
+            ViewModel = this.AppBootstrapper;
+            this.DataContext = ViewModel;
         }
 
         public AppBootstrapper AppBootstrapper { get; protected set; }
